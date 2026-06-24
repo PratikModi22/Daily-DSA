@@ -1,0 +1,17 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        h={}
+
+        for i in range(0,len(nums)):
+            h[nums[i]]=i
+
+        for i in range(0,len(nums)):
+            dif= target -nums[i]
+            if dif in h and i!=h[dif]:
+                return i,h[dif]
+        return None   
